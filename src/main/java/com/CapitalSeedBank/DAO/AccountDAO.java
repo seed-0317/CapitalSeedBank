@@ -7,6 +7,11 @@ import com.CapitalSeedBank.Model.Account;
  */
 public interface AccountDAO {
 
+    //create an account
+
+    void makeAccount(Account accountToMake);
+
+
     // get the account balance
 
     Account  getAccount();
