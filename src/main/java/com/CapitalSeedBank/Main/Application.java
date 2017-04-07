@@ -17,6 +17,9 @@ public class Application {
         AccountDAO dao = new AccountDAOImpl();
 
        // dao.makeAccount(newAcct);
+        Account temp = dao.getAccount();
+
+        System.out.println(temp);
 
     }
 }
