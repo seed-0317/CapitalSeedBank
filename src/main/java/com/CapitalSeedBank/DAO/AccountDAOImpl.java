@@ -1,6 +1,8 @@
 package com.CapitalSeedBank.DAO;
 
 import com.CapitalSeedBank.Model.Account;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
@@ -12,7 +14,7 @@ public class AccountDAOImpl implements AccountDAO {
 
 
     public void makeAccount(Account accountToMake) {
-        String filename = "src/main/java/fileio/Account.txt";
+        String filename = "src/main/resources/Account.txt";
         writeCharacterStream(filename, accountToMake);
     }
 
@@ -32,7 +34,21 @@ public class AccountDAOImpl implements AccountDAO {
 
     public Account getAccount() {
 
-        return null;
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonInString = "{'accountId' : 'balance'}";
+
+
+        try {
+            Account obj = mapper.readValue(new File("src/main/resources/Account.txt"), Account.class);
+            return obj;
+        } catch (JsonParseException e) {
+            e.printStackTrace();
+        } catch (JsonMappingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+       return obj;
     }
 
     public void saveDeposit(Account accountToSave) {
