@@ -30,17 +30,13 @@ public class AccountDAOImpl implements AccountDAO {
             }
         }
 
-
-
     public Account getAccount() {
 
         ObjectMapper mapper = new ObjectMapper();
-        String jsonInString = "{'accountId' : 'balance'}";
-
+        Account obj = null;
 
         try {
-            Account obj = mapper.readValue(new File("src/main/resources/Account.txt"), Account.class);
-            return obj;
+            obj = mapper.readValue(new File("src/main/resources/Account.txt"), Account.class);
         } catch (JsonParseException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {
@@ -48,8 +44,10 @@ public class AccountDAOImpl implements AccountDAO {
         } catch (IOException e) {
             e.printStackTrace();
         }
-       return obj;
+        return obj;
+
     }
+
 
     public void saveDeposit(Account accountToSave) {
 
