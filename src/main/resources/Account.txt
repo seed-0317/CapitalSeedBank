@@ -1,1 +1,1 @@
-{"accountId":1,"balance":200}
+{"accountId":1,"balance":0}

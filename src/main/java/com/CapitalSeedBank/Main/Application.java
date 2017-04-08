@@ -26,16 +26,31 @@ public class Application {
 
         // code to make a deposit
 
-        Account temp = dao.getAccount();
+        //Account temp = dao.getAccount();
 
         //later we can prompt the user for deposit amount
 
-        int depAmount = 100;
+        //int depAmount = 100;
 
-        temp.setBalance(temp.getBalance()+depAmount);
+        //temp.setBalance(temp.getBalance()+Math.abs(depAmount));
 
-        dao.makeAccount(temp);
+        //dao.makeAccount(temp);
 
+        // code to make a withdrawl
+
+        Account temp = dao.getAccount();
+
+        int withdrawlAmount = 100;
+
+        if (temp.getBalance() - Math.abs(withdrawlAmount) < 0) {
+            System.out.println("Withdrawl will make balance negative");
+        } else {
+
+            int tempBal = temp.getBalance();
+            tempBal = tempBal - Math.abs(withdrawlAmount);
+            temp.setBalance(tempBal);
+            dao.makeAccount(temp);
+        }
 
 
     }
