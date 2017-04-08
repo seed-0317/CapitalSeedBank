@@ -35,7 +35,7 @@ public class AccountDAOImpl implements AccountDAO {
     public Account getAccount() {
 
         ObjectMapper mapper = new ObjectMapper();
-        String jsonInString = "{'accountId' : 'balance'}";
+        Account obj = null;
 
 
         try {
