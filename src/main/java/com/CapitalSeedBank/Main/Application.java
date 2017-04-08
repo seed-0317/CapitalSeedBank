@@ -12,18 +12,33 @@ public class Application {
     public static void main(String[] args) {
 
 
-        Account newAcct = new Account(1, 100);
+        //Account newAcct = new Account(1, 100);
 
         AccountDAO dao = new AccountDAOImpl();
 
         // test make an account
-       // dao.makeAccount(newAcct);
+        // dao.makeAccount(newAcct);
 
         // test get an account
+        // Account temp = dao.getAccount();
+
+        //System.out.println(temp);
+
+        // code to make a deposit
+
         Account temp = dao.getAccount();
 
-        System.out.println(temp);
+        //later we can prompt the user for deposit amount
+
+        int depAmount = 100;
+
+        temp.setBalance(temp.getBalance()+depAmount);
+
+        dao.makeAccount(temp);
+
+
 
     }
+
 }
 

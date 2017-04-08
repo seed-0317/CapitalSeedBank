@@ -51,6 +51,20 @@ public class AccountDAOImpl implements AccountDAO {
 
 
     public void saveDeposit(Account accountToSave) {
+        String filename = "src/main/resources/Account.txt";
+        writeCharacterStream1(filename, accountToSave);
+    }
+
+    static void writeCharacterStream1(String filename, Account accountToSave) {
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            mapper.writeValue(new File(filename), accountToSave);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
