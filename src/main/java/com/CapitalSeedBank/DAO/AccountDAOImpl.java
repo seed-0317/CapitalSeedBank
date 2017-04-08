@@ -34,10 +34,7 @@ public class AccountDAOImpl implements AccountDAO {
 
         ObjectMapper mapper = new ObjectMapper();
         Account obj = null;
-<<<<<<< HEAD
-=======
 
->>>>>>> account
 
         try {
             obj = mapper.readValue(new File("src/main/resources/Account.txt"), Account.class);

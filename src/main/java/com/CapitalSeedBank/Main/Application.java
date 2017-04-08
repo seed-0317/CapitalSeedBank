@@ -16,18 +16,14 @@ public class Application {
 
         AccountDAO dao = new AccountDAOImpl();
 
-<<<<<<< HEAD
+        // test make an account
        // dao.makeAccount(newAcct);
+
+        // test get an account
         Account temp = dao.getAccount();
 
         System.out.println(temp);
 
-=======
-        // dao.makeAccount(newAcct);
-        Account temp = dao.getAccount();
-
-        System.out.println(temp);
->>>>>>> account
     }
 }
 
