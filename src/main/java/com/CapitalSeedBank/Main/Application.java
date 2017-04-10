@@ -26,7 +26,7 @@ public class Application {
 
         //System.out.println(temp);
 
-        // code to make a deposit
+        /* code to make a deposit
 
         Account temp = dao.getAccount();
 
@@ -36,28 +36,36 @@ public class Application {
         Scanner scanner = new Scanner(System.in);
         int depAmount = Integer.parseInt(scanner.nextLine());
 
+
+
         //int depAmount = 100;
 
         temp.setBalance(temp.getBalance()+Math.abs(depAmount));
 
         dao.makeAccount(temp);
 
-        /* code to make a withdraw
+        */
+
+        // code to make a withdraw
 
         Account temp = dao.getAccount();
 
-        int withdrawlAmount = 100;
+        System.out.println("Enter your withdraw amount: ");
+        Scanner scanner = new Scanner(System.in);
+        int withAmount = Integer.parseInt(scanner.nextLine());
 
-        if (temp.getBalance() - Math.abs(withdrawlAmount) < 0) {
-            System.out.println("Withdrawl will make balance negative");
+        //int withdrawlAmount = 100;
+
+        if (temp.getBalance() - Math.abs(withAmount) < 0) {
+            System.out.println("Withdraw will make balance negative");
         } else {
 
             int tempBal = temp.getBalance();
-            tempBal = tempBal - Math.abs(withdrawlAmount);
+            tempBal = tempBal - Math.abs(withAmount);
             temp.setBalance(tempBal);
             dao.makeAccount(temp);
         }
-        */
+
 
     }
 
