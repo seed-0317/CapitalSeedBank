@@ -4,6 +4,8 @@ import com.CapitalSeedBank.DAO.AccountDAO;
 import com.CapitalSeedBank.DAO.AccountDAOImpl;
 import com.CapitalSeedBank.Model.Account;
 
+import java.util.Scanner;
+
 /**
  * Created by nof191 on 4/7/17.
  */
@@ -26,17 +28,21 @@ public class Application {
 
         // code to make a deposit
 
-        //Account temp = dao.getAccount();
+        Account temp = dao.getAccount();
 
         //later we can prompt the user for deposit amount
 
+        System.out.println("Enter your deposit amount: ");
+        Scanner scanner = new Scanner(System.in);
+        int depAmount = Integer.parseInt(scanner.nextLine());
+
         //int depAmount = 100;
 
-        //temp.setBalance(temp.getBalance()+Math.abs(depAmount));
+        temp.setBalance(temp.getBalance()+Math.abs(depAmount));
 
-        //dao.makeAccount(temp);
+        dao.makeAccount(temp);
 
-        // code to make a withdrawl
+        /* code to make a withdraw
 
         Account temp = dao.getAccount();
 
@@ -51,7 +57,7 @@ public class Application {
             temp.setBalance(tempBal);
             dao.makeAccount(temp);
         }
-
+        */
 
     }
 
